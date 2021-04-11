@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Interest calculator</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+        }
+        th {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<p th:text="${email}+' is logged in.'"/>
+<h1>Calculator</h1>
+<table style="width:400px;">
+    <tr style="border: 1px solid black;">
+        <th>account number</th>
+        <th>balance</th>
+        <th>intrest rate</th>
+        <th>intrest</th>
+    </tr>
+    <tr th:each="interest: ${interestList}">
+        <td th:text="${interest.accountNo}" />
+        <td th:text="${interest.balance}" />
+        <td th:text="${interest.interestRate}" />
+        <td th:text="${interest.interest}" />
+    </tr>
+</table>
+<form action="#" th:action="@{/calculate}" method="get">
+    <input type="submit" value="Calculate" />
+</form>
+
+<form action="#" th:action="@{/clear}" method="get">
+    <input type="submit" value="Clear" />
+</form>
+</body>
+</html>

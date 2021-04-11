@@ -1,11 +1,3 @@
-/*
- * Copyright (C) 2017 Sinorbis Technology or its affiliates
- *
- * Information contained within this file cannot be copied,
- * distributed and/or practised without the written consent of
- * Sinorbis Technology or its affiliates.
- */
-
 package com.example.demo.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,7 +40,7 @@ public class Config {
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         vendorAdapter.setDatabasePlatform("org.hibernate.dialect.MySQL8Dialect");
         entityManagerFactoryBean.setJpaVendorAdapter(vendorAdapter);
-        //additional config of factory
+
 
         return entityManagerFactoryBean;
     }
@@ -65,7 +57,6 @@ public class Config {
     public DataSource dataSource() {
 
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        //dataSource.setDriverClassName(env.getProperty("custom.datasource.driver-class-name"));
         dataSource.setUrl(env.getProperty("spring.datasource.url"));
         dataSource.setUsername(env.getProperty("spring.datasource.username"));
         dataSource.setPassword(env.getProperty("spring.datasource.password"));

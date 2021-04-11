@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Form</h1>
+<form action="#" th:action="@{/api/user}" th:object="${user}" method="post">
+    <p>email: <input type="text" th:field="*{email}" /></p>
+    <p>password: <input type="text" th:field="*{password}" /></p>
+    <p><input type="submit" value="Submit" />
+</form>
+</body>
+</html>
